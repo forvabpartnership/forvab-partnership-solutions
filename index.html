@@ -76,9 +76,6 @@ h1 .hl{color:var(--blue2);text-shadow:0 0 30px rgba(22,139,255,.45)}
 .hud{position:absolute;background:rgba(10,16,29,.72);border:1px solid var(--line2);border-radius:12px;backdrop-filter:blur(10px);padding:.8rem 1rem;font-size:.8rem;color:var(--muted);box-shadow:var(--glow)}
 .hud b{color:#fff;display:block;font-family:var(--font-d);font-size:.86rem}
 .hud .tick{color:#4ade80;font-weight:700}
-.scroll-cue{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);color:var(--dim);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.5rem}
-.scroll-cue::after{content:"";width:1px;height:38px;background:linear-gradient(var(--blue2),transparent);animation:drop 1.8s infinite}
-@keyframes drop{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* ---------- sections ---------- */
 section.block{padding:4.5rem 1.25rem;position:relative}
@@ -190,7 +187,7 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.scroll-cue::after,.eyebrow i{animation:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.eyebrow i{animation:none}}
 /* responsive */
 @media(max-width:1020px){
   .grid4{grid-template-columns:repeat(2,1fr)}
@@ -326,7 +323,6 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
       <div class="hud" style="left:12%;bottom:8%"><b>Consultation</b>Documented &amp; transparent terms</div>
     </div>
   </div>
-  <div class="scroll-cue" aria-hidden="true">Scroll</div>
 </section>
 
 <!-- ============ ABOUT US ============ -->
