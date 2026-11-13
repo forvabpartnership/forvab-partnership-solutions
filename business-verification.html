@@ -84,15 +84,12 @@ form.fancy{background:linear-gradient(160deg,rgba(20,32,54,.6),rgba(8,11,18,.9))
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .field{margin-bottom:1.05rem}
 .field label{display:block;font-size:.84rem;font-weight:700;color:var(--muted);margin-bottom:.4rem}
-.field label .req{color:var(--blue2)}
 .field .opt{color:var(--dim);font-weight:500}
 .field input,.field select,.field textarea{width:100%;background:#060A13;border:1px solid var(--line);border-radius:10px;color:#fff;padding:.8rem .95rem;font-family:var(--font-b);font-size:.95rem;transition:border-color .2s,box-shadow .2s}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(22,139,255,.18)}
 .field .err{display:none;color:#ff8a8a;font-size:.78rem;margin-top:.3rem}
 .field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#e05656}
 .field.invalid .err{display:block}
-.req-note{color:var(--dim);font-size:.82rem;margin-top:.4rem}
-.req-note .req{color:var(--blue2);font-weight:700}
 
 /* uploads */
 .up{border:1px dashed var(--line2);border-radius:12px;padding:1.05rem 1.1rem;margin-bottom:1rem;background:rgba(22,139,255,.03)}
@@ -101,7 +98,6 @@ form.fancy{background:linear-gradient(160deg,rgba(20,32,54,.6),rgba(8,11,18,.9))
 .up.invalid{border-color:#e05656}
 .up-top{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;justify-content:space-between}
 .up-label{font-size:.92rem;font-weight:700;color:#fff}
-.up-label .req{color:var(--blue2)}
 .up-label .opt{color:var(--dim);font-weight:500;font-size:.82rem}
 .up-pick{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-d);font-weight:600;font-size:.85rem;padding:.55rem 1.05rem;border-radius:9px;border:1px solid var(--line2);background:rgba(22,139,255,.08);color:var(--blue3);cursor:pointer;transition:background .18s ease}
 .up-pick:hover{background:rgba(22,139,255,.16);color:#fff}
@@ -248,8 +244,8 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
           <div><h2 id="vs1">Business Information</h2><p>Tell us about the business applying for partnership.</p></div>
         </div>
         <div class="field">
-          <label for="bizName">Legal Business Name <span class="req">*</span></label>
-          <input id="bizName" name="legal_business_name" type="text" required autocomplete="organization" />
+          <label for="bizName">Legal Business Name</label>
+          <input id="bizName" name="legal_business_name" type="text" autocomplete="organization" />
           <span class="err">Please enter the legal business name.</span>
         </div>
         <div class="field">
@@ -258,8 +254,8 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
         </div>
         <div class="frow">
           <div class="field">
-            <label for="bizState">Business Registration State <span class="req">*</span></label>
-            <select id="bizState" name="business_state" required>
+            <label for="bizState">Business Registration State</label>
+            <select id="bizState" name="business_state">
               <option value="">Select a state…</option>
               <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
             </select>
@@ -271,23 +267,22 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
           </div>
         </div>
         <div class="field">
-          <label for="bizAddress">Business Address <span class="req">*</span></label>
-          <input id="bizAddress" name="business_address" type="text" required autocomplete="street-address" />
+          <label for="bizAddress">Business Address</label>
+          <input id="bizAddress" name="business_address" type="text" autocomplete="street-address" />
           <span class="err">Please enter the business address.</span>
         </div>
         <div class="frow">
           <div class="field">
-            <label for="bizEmail">Business Email Address <span class="req">*</span></label>
-            <input id="bizEmail" name="business_email" type="email" required autocomplete="email" />
+            <label for="bizEmail">Business Email Address</label>
+            <input id="bizEmail" name="business_email" type="email" autocomplete="email" />
             <span class="err">Please enter a valid business email address.</span>
           </div>
           <div class="field">
-            <label for="bizPhone">Business Phone Number <span class="req">*</span></label>
-            <input id="bizPhone" name="business_phone" type="tel" required autocomplete="tel" />
+            <label for="bizPhone">Business Phone Number</label>
+            <input id="bizPhone" name="business_phone" type="tel" autocomplete="tel" />
             <span class="err">Please enter the business phone number.</span>
           </div>
         </div>
-        <p class="req-note"><span class="req">*</span> Required field</p>
       </section>
 
       <!-- ===== 2. AUTHORIZED REPRESENTATIVE ===== -->
@@ -298,13 +293,13 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
         </div>
         <div class="frow">
           <div class="field">
-            <label for="repName">Full Legal Name <span class="req">*</span></label>
-            <input id="repName" name="rep_name" type="text" required autocomplete="name" />
+            <label for="repName">Full Legal Name</label>
+            <input id="repName" name="rep_name" type="text" autocomplete="name" />
             <span class="err">Please enter the representative&rsquo;s full legal name.</span>
           </div>
           <div class="field">
-            <label for="repPosition">Position in Company <span class="req">*</span></label>
-            <select id="repPosition" name="rep_position" required>
+            <label for="repPosition">Position in Company</label>
+            <select id="repPosition" name="rep_position">
               <option value="">Select a position…</option>
               <option>Owner</option>
               <option>Member</option>
@@ -316,17 +311,16 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
         </div>
         <div class="frow">
           <div class="field">
-            <label for="repEmail">Personal or Business Email Address <span class="req">*</span></label>
-            <input id="repEmail" name="rep_email" type="email" required autocomplete="email" />
+            <label for="repEmail">Personal or Business Email Address</label>
+            <input id="repEmail" name="rep_email" type="email" autocomplete="email" />
             <span class="err">Please enter a valid email address.</span>
           </div>
           <div class="field">
-            <label for="repPhone">Contact Phone Number <span class="req">*</span></label>
-            <input id="repPhone" name="rep_phone" type="tel" required autocomplete="tel" />
+            <label for="repPhone">Contact Phone Number</label>
+            <input id="repPhone" name="rep_phone" type="tel" autocomplete="tel" />
             <span class="err">Please enter a contact phone number.</span>
           </div>
         </div>
-        <p class="req-note"><span class="req">*</span> Required field</p>
       </section>
 
       <!-- ===== 3. GOVERNMENT-ISSUED IDENTIFICATION ===== -->
@@ -336,8 +330,8 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
           <div><h2 id="vs3">Government-Issued Identification</h2><p>Upload a clear copy of the authorized representative&rsquo;s government-issued ID.</p></div>
         </div>
         <div class="field">
-          <label for="idType">Identification Type <span class="req">*</span></label>
-          <select id="idType" name="id_type" required>
+          <label for="idType">Identification Type</label>
+          <select id="idType" name="id_type">
             <option value="">Select ID type…</option>
             <option>Driver&rsquo;s License</option>
             <option>State ID Card</option>
@@ -347,12 +341,12 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
         </div>
         <div class="up" data-group="idFront">
           <div class="up-top">
-            <span class="up-label">ID — Front <span class="req">*</span></span>
+            <span class="up-label">ID — Front</span>
             <label class="up-pick" for="idFrontInput"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4m0 0l-4 4m4-4l4 4"/><path d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg>Choose files</label>
             <input id="idFrontInput" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple />
           </div>
           <p class="up-meta">Accepted: PDF, JPG, JPEG, PNG · Maximum 10 MB per file · Multiple files allowed</p>
-          <span class="err">Please upload the front of the ID.</span>
+          <span class="err"></span>
           <ul class="file-list" aria-live="polite"></ul>
           <div class="fbar"><i></i></div>
         </div>
@@ -374,11 +368,11 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
       <section class="vsec" aria-labelledby="vs4">
         <div class="vsec-head">
           <div class="vsec-num">04</div>
-          <div><h2 id="vs4">LLC &amp; Business Documentation</h2><p>At least one formation document is required. The remaining documents are optional and help speed up review.</p></div>
+          <div><h2 id="vs4">LLC &amp; Business Documentation</h2><p>Upload the documents you have — they help speed up review.</p></div>
         </div>
         <div class="field">
-          <label for="formationType">Formation Document Type <span class="req">*</span></label>
-          <select id="formationType" name="formation_document_type" required>
+          <label for="formationType">Formation Document Type</label>
+          <select id="formationType" name="formation_document_type">
             <option value="">Select the document you are uploading…</option>
             <option>Articles of Organization</option>
             <option>Certificate of Formation</option>
@@ -388,12 +382,12 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
         </div>
         <div class="up" data-group="llcFormation">
           <div class="up-top">
-            <span class="up-label">Formation Document <span class="req">*</span> <span class="opt">(Articles of Organization, Certificate of Formation, or LLC Operating Agreement)</span></span>
+            <span class="up-label">Formation Document <span class="opt">(Articles of Organization, Certificate of Formation, or LLC Operating Agreement)</span></span>
             <label class="up-pick" for="llcFormationInput"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4m0 0l-4 4m4-4l4 4"/><path d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg>Choose files</label>
             <input id="llcFormationInput" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple />
           </div>
           <p class="up-meta">Accepted: PDF, JPG, JPEG, PNG · Maximum 10 MB per file · Multiple files allowed</p>
-          <span class="err">Please upload at least one formation document.</span>
+          <span class="err"></span>
           <ul class="file-list" aria-live="polite"></ul>
           <div class="fbar"><i></i></div>
         </div>
@@ -470,7 +464,7 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
         </div>
         <p class="privacy-text">By submitting this application, you acknowledge that the information and documents provided may be collected, processed and reviewed by Pacific Business Partners LLC for legitimate business verification and partnership-related purposes. Your submitted information will be handled confidentially and protected through appropriate security measures. Access to submitted documents will be restricted to authorized personnel.</p>
         <div class="consent-wrap" id="consentWrap">
-          <label class="consent" for="consentBox"><input type="checkbox" id="consentBox" name="consent" value="yes" /><span>I confirm that the information and documents submitted are accurate and that I am authorized to provide them. <span class="req" style="color:var(--blue2)">*</span></span></label>
+          <label class="consent" for="consentBox"><input type="checkbox" id="consentBox" name="consent" value="yes" /><span>I confirm that the information and documents submitted are accurate and that I am authorized to provide them.</span></label>
           <span class="err">Please confirm that the information and documents are accurate and that you are authorized to provide them.</span>
         </div>
       </section>
@@ -753,7 +747,6 @@ function setField(el, bad){
   if(f) f.classList.toggle('invalid', !!bad);
   return !bad;
 }
-function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
 ['bizName','bizState','bizAddress','bizPhone','repName','repPosition','repPhone'].forEach(function(id){
   var el = document.getElementById(id);
   el.addEventListener('input', function(){ setField(el, false); });
@@ -768,45 +761,13 @@ document.getElementById('consentBox').addEventListener('change', function(){
 });
 
 function validate(){
-  var ok = true, firstBad = null;
-  function req(id, isBad){
-    var el = document.getElementById(id);
-    var bad = typeof isBad === 'function' ? isBad(el) : !el.value.trim();
-    if(!setField(el, bad)){ ok = false; if(!firstBad) firstBad = el; }
-  }
-  req('bizName'); req('bizState'); req('bizAddress'); req('bizPhone');
-  req('repName'); req('repPosition'); req('repPhone');
-  req('bizEmail', function(el){ return !validEmail(el.value.trim()); });
-  req('repEmail', function(el){ return !validEmail(el.value.trim()); });
-
-  var idType = document.getElementById('idType');
-  if(!setField(idType, !idType.value)){ ok = false; if(!firstBad) firstBad = idType; }
-  var formType = document.getElementById('formationType');
-  if(!setField(formType, !formType.value)){ ok = false; if(!firstBad) firstBad = formType; }
-
-  var gF = groups['idFront'];
-  if(gF.files.length === 0){
-    gF.err.textContent = 'Please upload the front of the ID.';
-    gF.box.classList.add('invalid'); ok = false; if(!firstBad) firstBad = gF.box;
-  } else gF.box.classList.remove('invalid');
-
-  var gL = groups['llcFormation'];
-  if(gL.files.length === 0){
-    gL.err.textContent = 'Please upload at least one formation document.';
-    gL.box.classList.add('invalid'); ok = false; if(!firstBad) firstBad = gL.box;
-  } else gL.box.classList.remove('invalid');
-
-  if(!document.getElementById('consentBox').checked){
-    document.getElementById('consentWrap').classList.add('invalid');
-    ok = false; if(!firstBad) firstBad = document.getElementById('consentBox');
-  }
-
+  /* All fields and uploads are optional: the only remaining check is the
+     20 MB total file-size safety limit. */
   if(totalSize() > MAX_TOTAL){
-    ok = false; if(!firstBad) firstBad = totalNote;
     showError('Your files total ' + fmtSize(totalSize()) + ', which is over the 20 MB submission limit. Please remove or compress some files and try again.');
-    return { ok: false, firstBad: firstBad };
+    return { ok: false, firstBad: totalNote };
   }
-  return { ok: ok, firstBad: firstBad };
+  return { ok: true, firstBad: null };
 }
 
 function showError(msg){
@@ -867,7 +828,7 @@ form.addEventListener('submit', function(e){
   fd.append('rep_phone', document.getElementById('repPhone').value.trim());
   fd.append('id_type', document.getElementById('idType').value);
   fd.append('formation_document_type', document.getElementById('formationType').value);
-  fd.append('consent', 'yes');
+  fd.append('consent', document.getElementById('consentBox').checked ? 'yes' : 'no');
   fd.append('company_fax', '');
 
   var fieldNames = {
