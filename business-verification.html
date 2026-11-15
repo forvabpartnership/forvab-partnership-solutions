@@ -271,8 +271,9 @@ footer{border-top:1px solid var(--line);background:#030304;padding:2.4rem 1.25re
             <span class="err">Please select the state where the business is registered.</span>
           </div>
           <div class="field">
-            <label for="bizEin">EIN <span class="opt">(optional)</span></label>
-            <input id="bizEin" name="ein" type="text" inputmode="numeric" placeholder="XX-XXXXXXX" autocomplete="off" />
+            <label for="bizEin">EIN <span class="req">*</span></label>
+            <input id="bizEin" name="ein" type="text" required inputmode="numeric" placeholder="XX-XXXXXXX" autocomplete="off" />
+            <span class="err">Please enter the EIN in the format XX-XXXXXXX.</span>
           </div>
         </div>
         <div class="field">
@@ -759,7 +760,8 @@ function setField(el, bad){
   return !bad;
 }
 function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
-['bizName','bizState','bizAddress','bizPhone','repName','repPosition','repPhone'].forEach(function(id){
+function validEin(v){ return /^\d{2}-\d{7}$/.test(v); }
+['bizName','bizState','bizEin','bizAddress','bizPhone','repName','repPosition','repPhone'].forEach(function(id){
   var el = document.getElementById(id);
   el.addEventListener('input', function(){ setField(el, false); });
   el.addEventListener('change', function(){ setField(el, false); });
@@ -783,6 +785,7 @@ function validate(){
   req('repName'); req('repPosition'); req('repPhone');
   req('bizEmail', function(el){ return !validEmail(el.value.trim()); });
   req('repEmail', function(el){ return !validEmail(el.value.trim()); });
+  req('bizEin', function(el){ return !validEin(el.value.trim()); });
 
   var idType = document.getElementById('idType');
   if(!setField(idType, !idType.value)){ ok = false; if(!firstBad) firstBad = idType; }
